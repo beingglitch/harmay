@@ -213,83 +213,46 @@ export default function Benefits() {
           ))}
         </div>
 
-        {/* Enhanced CTA Section */}
+        {/* CTA section */}
         <motion.div
-          className="benefits-cta mt-32"
-          initial={{ opacity: 0, y: 50 }}
+          className="mt-20 text-center"
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
+          transition={{ delay: 0.3, duration: 0.8 }}
         >
-          <div className="relative bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-600 rounded-3xl p-12 sm:p-16 text-white overflow-hidden">
-            {/* Animated background pattern */}
-            <div className="absolute inset-0 opacity-10">
-              <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff1a_1px,transparent_1px),linear-gradient(to_bottom,#ffffff1a_1px,transparent_1px)] bg-[size:24px_24px]"></div>
-            </div>
-
-            {/* Floating gradient orbs */}
-            <motion.div
-              className="absolute top-0 right-0 w-72 h-72 bg-white/10 rounded-full blur-3xl"
-              animate={{
-                scale: [1, 1.2, 1],
-                opacity: [0.3, 0.5, 0.3],
-              }}
-              transition={{
-                duration: 6,
-                repeat: Infinity,
-                ease: 'easeInOut',
-              }}
-            />
-
-            <div className="relative z-10 text-center">
-              <motion.h3
-                className="text-3xl sm:text-4xl font-bold mb-4"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+          <div className="bg-linear-to-br from-primary/5 to-secondary/5 rounded-3xl p-12 border border-slate-200">
+            <h3 className="text-3xl font-bold text-slate-900 mb-4">
+              Ready to Transform Your Business?
+            </h3>
+            <p className="text-lg text-slate-600 mb-8 max-w-2xl mx-auto">
+              Join 500+ construction shops already growing with Harmey. Get started in minutes with zero setup fees.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <motion.button
+                className="px-8 py-4 bg-primary text-white rounded-full font-semibold hover:opacity-90 transition-opacity inline-flex items-center justify-center gap-2"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
               >
-                Ready to transform your business?
-              </motion.h3>
-              <motion.p
-                className="text-xl text-white/90 mb-8 max-w-2xl mx-auto"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.1 }}
-              >
-                Join hundreds of construction businesses already using Harmay to grow faster and manage cash flow better.
-              </motion.p>
-              <motion.div
-                className="flex flex-col sm:flex-row gap-4 justify-center"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.2 }}
-              >
-                <motion.button
-                  className="bg-white text-indigo-600 px-8 py-4 rounded-full text-lg font-semibold inline-flex items-center justify-center gap-2"
-                  whileHover={{ scale: 1.05, boxShadow: '0 20px 40px rgba(255, 255, 255, 0.3)' }}
-                  whileTap={{ scale: 0.95 }}
+                Get Started Free
+                <motion.svg
+                  className="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  initial={{ x: 0 }}
+                  whileHover={{ x: 5 }}
                 >
-                  Get started now
-                  <motion.svg
-                    className="w-5 h-5"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    whileHover={{ x: 5 }}
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </motion.svg>
-                </motion.button>
-                <motion.button
-                  className="border-2 border-white text-white px-8 py-4 rounded-full text-lg font-semibold"
-                  whileHover={{ scale: 1.05, backgroundColor: 'rgba(255, 255, 255, 0.1)' }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  Schedule a demo
-                </motion.button>
-              </motion.div>
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </motion.svg>
+              </motion.button>
+              <motion.button
+                className="px-8 py-4 bg-white text-slate-700 rounded-full font-semibold border-2 border-slate-200 hover:border-primary transition-colors inline-flex items-center justify-center gap-2"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                Schedule a Demo
+              </motion.button>
             </div>
           </div>
         </motion.div>

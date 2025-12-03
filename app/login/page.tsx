@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { LogoWithText } from '@/components/Logo';
+import { Logo } from '@/components/landing_page/Logo';
 import { useState } from 'react';
 
 export default function LoginPage() {
@@ -26,7 +26,7 @@ export default function LoginPage() {
           {/* Logo */}
           <div className="flex justify-center mb-8">
             <Link href="/">
-              <LogoWithText />
+              <Logo />
             </Link>
           </div>
 

@@ -1,11 +1,11 @@
-import Navigation from '@/components/Navigation';
-import Hero from '@/components/Hero';
-import PlatformShowcase from '@/components/PlatformShowcase';
-import Features from '@/components/Features';
-import Benefits from '@/components/Benefits';
-import Testimonials from '@/components/Testimonials';
-import FAQ from '@/components/FAQ';
-import Footer from '@/components/Footer';
+import Navigation from '@/components/landing_page/Navigation';
+import Hero from '@/components/landing_page/Hero';
+import PlatformShowcase from '@/components/landing_page/PlatformShowcase';
+import Features from '@/components/landing_page/Features';
+import Benefits from '@/components/landing_page/Benefits';
+import Testimonials from '@/components/landing_page/Testimonials';
+import FAQ from '@/components/landing_page/FAQ';
+import Footer from '@/components/landing_page/Footer';
 
 export default function Home() {
   return (

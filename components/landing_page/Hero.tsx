@@ -4,6 +4,9 @@ import { useEffect, useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { gsap } from 'gsap';
 import Link from 'next/link';
+import Image from 'next/image';
+
+import { HEROIMAGE } from "@/app/assets";
 
 export default function Hero() {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -13,7 +16,7 @@ export default function Hero() {
   });
 
   const y = useTransform(scrollYProgress, [0, 1], ['0%', '50%']);
-  const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
+  const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0.75]);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -86,102 +89,94 @@ export default function Hero() {
   return (
     <section
       ref={heroRef}
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-linear-to-br from-slate-50 via-blue-50 to-indigo-50"
     >
       <div className="absolute inset-0 overflow-hidden">
-        <div className="orb-1 absolute -top-1/2 -right-1/4 w-[600px] h-[600px] bg-gradient-to-br from-indigo-400/30 to-purple-400/30 rounded-full blur-3xl"></div>
-        <div className="orb-2 absolute -bottom-1/4 -left-1/4 w-[600px] h-[600px] bg-gradient-to-tr from-blue-400/30 to-cyan-400/30 rounded-full blur-3xl"></div>
+        <div className="orb-1 absolute -top-1/2 -right-1/4 w-[600px] h-[600px] bg-linear-to-br from-indigo-400/30 to-purple-400/30 rounded-full blur-3xl"></div>
+        <div className="orb-2 absolute -bottom-1/4 -left-1/4 w-[600px] h-[600px] bg-linear-to-tr from-blue-400/30 to-cyan-400/30 rounded-full blur-3xl"></div>
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:24px_24px]"></div>
       </div>
 
       <motion.div
         style={{ y, opacity }}
-        className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 text-center"
+        className="relative max-w- w-full px-4 sm:px-6 lg:px-8 py-32"
       >
-        <div className="mb-6">
-          <motion.div
-            initial={{ scale: 0.8, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 0.5, ease: 'easeOut' }}
-            className="inline-flex items-center gap-2 px-4 py-2 bg-white/80 backdrop-blur-sm rounded-full border border-indigo-200 shadow-sm"
-          >
-            <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
-            <span className="text-sm font-medium text-slate-700">Powering 500+ construction material shops</span>
-          </motion.div>
-        </div>
 
-        <div className="overflow-hidden">
-          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-slate-900 mb-6 leading-tight">
-            <div className="hero-title inline-block">Smart Lending &</div>
-            <br />
-            <div className="hero-title inline-block">Inventory Platform for</div>
-            <br />
-            <div className="hero-title inline-block bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
-              Construction Commerce
-            </div>
-          </h1>
-        </div>
+        <div className='grid  grid-cols-1 sm:grid-cols-2'>
 
-        <p className="hero-subtitle text-xl sm:text-2xl text-slate-600 mb-12 max-w-4xl mx-auto leading-relaxed">
-          Empowering shops with instant customer financing, smart inventory management, and NBFC integration. Transform how construction materials are bought and sold.
-        </p>
-
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
-          <Link href="/signup">
-            <motion.button
-              className="hero-cta group relative bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-8 py-4 rounded-full text-lg font-semibold overflow-hidden shadow-lg"
-              whileHover={{ scale: 1.05, boxShadow: '0 20px 40px rgba(99, 102, 241, 0.3)' }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <span className="relative z-10 flex items-center gap-2">
-                Get Started Free
-                <motion.svg
-                  className="w-5 h-5"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  initial={{ x: 0 }}
-                  whileHover={{ x: 5 }}
-                  transition={{ duration: 0.3 }}
+          <div>
+            <div className="mb-10">
+              <motion.div
+                initial={{ scale: 0.8, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                transition={{ duration: 0.5, ease: 'easeOut' }}
+                className="inline-flex items-center gap-2 px-4 py-2 bg-white/80 backdrop-blur-sm rounded-full border border-indigo-200 shadow-sm"
                 >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </motion.svg>
-              </span>
-              <div className="absolute inset-0 bg-gradient-to-r from-indigo-700 to-purple-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-            </motion.button>
-          </Link>
+                <span className="w-2 h-2 bg-secondary rounded-full animate-pulse"></span>
+                <span className="text-sm font-medium text-slate-700">Powering construction business with instant credit</span>
+              </motion.div>
+            </div>
 
-          <motion.button
-            className="hero-cta text-slate-700 px-8 py-4 rounded-full text-lg font-semibold border-2 border-slate-300 bg-white/50 backdrop-blur-sm"
-            whileHover={{
-              scale: 1.05,
-              borderColor: '#6366f1',
-              backgroundColor: 'rgba(255, 255, 255, 0.8)',
-            }}
-            whileTap={{ scale: 0.95 }}
-          >
-            Watch Demo
-          </motion.button>
+            <div className="overflow-hidden">
+              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-slate-900 mb-6 leading-tight">
+                <div className="hero-title inline-block">Smart Lending &</div>
+                <br />
+                <div className="hero-title inline-block">Inventory Platform for</div>
+                <br />
+                <div className="hero-title inline-block text-secondary">
+                  Construction Commerce
+                </div>
+              </h1>
+            </div>
+
+            <p className="hero-subtitle text-xl sm:text-2xl text-slate-600 mb-12 leading-relaxed">
+              Customers get instant credit to buy materials. Shops get working capital to stock inventory. One platform to manage, scale, and grow your construction business.
+            </p>
+
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
+              <Link href="/signup">
+                <motion.button
+                  className="hero-cta group relative bg-primary text-white px-8 py-4 rounded-sm text-lg font-semibold overflow-hidden shadow-lg"
+                  whileHover={{ scale: 1.05, boxShadow: '0 20px 40px rgba(99, 102, 241, 0.3)' }}
+                  whileTap={{ scale: 0.95 }}
+                  >
+                  <span className="relative z-10 flex items-center gap-2">
+                    Contact Us
+                    <motion.svg
+                      className="w-5 h-5"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      initial={{ x: 0 }}
+                      whileHover={{ x: 5 }}
+                      transition={{ duration: 0.3 }}
+                      >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </motion.svg>
+                  </span>
+                </motion.button>
+              </Link>
+
+              <motion.button
+                className="hero-cta text-slate-700 px-8 py-4 rounded-sm text-lg font-semibold border-2 border-slate-300 bg-white/50 backdrop-blur-sm"
+                whileHover={{
+                  scale: 1.05,
+                  borderColor: '#0360fc',
+                  backgroundColor: 'rgba(255, 255, 255, 0.8)',
+                }}
+                whileTap={{ scale: 0.95 }}
+                >
+                Watch Demo
+              </motion.button>
+            </div>
+          </div>
+
+          <div className='absolute -right-8 -bottom-12'>
+            <Image src={HEROIMAGE} alt="software-snapshots" className="ml-auto w-250 relative" />
+          </div>
         </div>
 
-        <div className="flex flex-wrap justify-center items-center gap-6 mb-16">
-          {[
-            { icon: '🏪', text: 'For Shops' },
-            { icon: '👤', text: 'For Customers' },
-            { icon: '🏦', text: 'For NBFCs' },
-          ].map((badge, index) => (
-            <motion.div
-              key={index}
-              className="hero-badge flex items-center gap-2 px-4 py-2 bg-white/60 backdrop-blur-sm rounded-full border border-slate-200"
-              whileHover={{ y: -2, boxShadow: '0 10px 20px rgba(0, 0, 0, 0.1)' }}
-            >
-              <span className="text-xl">{badge.icon}</span>
-              <span className="text-sm font-medium text-slate-700">{badge.text}</span>
-            </motion.div>
-          ))}
-        </div>
-
-        <motion.div
+        {/* <motion.div
           className="hero-stats relative mx-auto max-w-5xl"
           whileHover={{ y: -10 }}
           transition={{ type: 'spring', stiffness: 300, damping: 20 }}
@@ -238,7 +233,7 @@ export default function Hero() {
               ease: 'easeInOut',
             }}
           />
-        </motion.div>
+        </motion.div> */}
       </motion.div>
 
       <motion.div

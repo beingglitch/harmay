@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { LogoWithText } from '@/components/Logo';
+import { Logo } from '@/components/landing_page/Logo';
 
 export default function Navigation() {
   const [scrolled, setScrolled] = useState(false);
@@ -30,7 +30,7 @@ export default function Navigation() {
           scrolled ? 'backdrop-blur-md shadow-sm' : ''
         }`}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <motion.div
               className="flex items-center"
@@ -39,7 +39,7 @@ export default function Navigation() {
               transition={{ duration: 0.5 }}
             >
               <Link href="/" className="flex items-center">
-                <LogoWithText />
+                <Logo />
               </Link>
             </motion.div>
 
@@ -53,7 +53,7 @@ export default function Navigation() {
                 { href: '#platforms', label: 'Platforms' },
                 { href: '#features', label: 'Features' },
                 { href: '#benefits', label: 'Benefits' },
-                { href: '#faq', label: 'FAQ' },
+                { href: '#faq', label: 'Pricing' },
               ].map((link) => (
                 <motion.div key={link.href} whileHover={{ y: -2 }} transition={{ type: 'spring', stiffness: 400, damping: 10 }}>
                   <Link
@@ -84,7 +84,7 @@ export default function Navigation() {
               </Link>
               <Link href="/signup">
                 <motion.button
-                  className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-6 py-2 rounded-full font-semibold"
+                  className="bg-primary text-white px-6 py-2 rounded-sm font-semibold"
                   whileHover={{
                     scale: 1.05,
                     boxShadow: '0 10px 20px rgba(99, 102, 241, 0.3)',
@@ -101,14 +101,14 @@ export default function Navigation() {
 
         {/* Scroll progress indicator */}
         <motion.div
-          className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 origin-left"
+          className="absolute bottom-0 left-0 right-0 h-0.5 bg-linear-to-r from-primary via-purple-600 to-secondary origin-left"
           style={{ scaleX: scrollYProgress }}
         />
       </motion.nav>
 
       {/* Mobile menu button (for future implementation) */}
       <motion.button
-        className="md:hidden fixed top-4 right-4 z-[60] w-10 h-10 bg-white rounded-full shadow-lg flex items-center justify-center"
+        className="md:hidden fixed top-4 right-4 z-60 w-10 h-10 bg-white rounded-full shadow-lg flex items-center justify-center"
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
       >
