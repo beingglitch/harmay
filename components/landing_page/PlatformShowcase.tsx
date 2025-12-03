@@ -84,13 +84,13 @@ function MockupDashboard({ stats = [] }: { stats?: any[] }) {
       </div>
 
       {/* Stats Grid */}
-      <div className="grid grid-cols-3 gap-3 mb-4">
+      <div className="grid grid-cols-3 gap-1 md:gap-3 mb-4">
         {stats.map((stat, i) => {
           const positive = stat.change.startsWith('+');
           return (
             <div
               key={i}
-              className="bg-slate-50/80 rounded-sm p-3 border border-slate-100 flex flex-col justify-between"
+              className="bg-slate-50/80 rounded-sm p-2 md:p-3 border border-slate-100 flex flex-col justify-between"
             >
               <div>
                 <div className="text-[11px] text-slate-500 mb-1 font-medium">
@@ -100,9 +100,9 @@ function MockupDashboard({ stats = [] }: { stats?: any[] }) {
                   {stat.value}
                 </div>
               </div>
-              <div className="mt-1 flex items-center justify-between text-[11px]">
+              <div className="mt-1 flex items-center justify-between text-[8px]">
                 <div
-                  className={`inline-flex items-center gap-1 rounded-full px-1.5 py-0.5 font-semibold ${
+                  className={`inline-flex items-center gap-1 rounded-full px-1 py-0.5 font-semibold ${
                     positive
                       ? 'bg-emerald-50 text-emerald-700'
                       : 'bg-rose-50 text-rose-700'
@@ -175,7 +175,7 @@ function MockupMobile({
       <div className="bg-white rounded-[1.25rem] p-4 h-[380px] flex flex-col border border-slate-100">
         {/* App Header */}
         <div className="flex items-center justify-between mb-3 pb-2 border-b border-slate-100">
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2"> 
             <div>
               <div className="text-xs font-semibold text-slate-900">Harmey</div>
               <div className="text-[10px] text-slate-500">Credit & Materials</div>
@@ -456,7 +456,7 @@ export default function PlatformShowcase() {
               viewport={{ once: true }}
               transition={{ delay: index * 0.15 }}
             >
-              <div className="bg-white rounded-md p-6 shadow-xl border border-slate-200 h-full flex flex-col hover:shadow-2xl transition-shadow duration-300">
+              <div className="bg-white rounded-md p-6 shadow-md border border-slate-200 h-full flex flex-col hover:shadow-lg transition-shadow duration-300">
                 <div className="flex items-center gap-3 mb-4">
                   <div className="w-10 h-10 rounded-md bg-primary/10 flex items-center justify-center text-lg">
                     <span className="text-base">{platform.icon}</span>

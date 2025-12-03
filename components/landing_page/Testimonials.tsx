@@ -5,68 +5,76 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 const testimonials = [
   {
-    quote: "Harmey ne hamara business transform kar diya. Ab hum 3-4 projects ek saath handle kar sakte hain bina cash flow ki tension ke. Material credit instantly mil jata hai.",
-    author: "Rajesh Kumar",
-    role: "Owner",
-    company: "Kumar Construction & Suppliers",
-    avatar: "RK",
-    location: "Delhi NCR",
+    quote:
+      'Harmey ne hamara business transform kar diya. Ab hum 3-4 projects ek saath handle kar sakte hain bina cash flow ki tension ke. Material credit instantly mil jata hai.',
+    author: 'Rajesh Kumar',
+    role: 'Owner',
+    company: 'Kumar Construction & Suppliers',
+    avatar: 'RK',
+    location: 'Delhi NCR',
   },
   {
-    quote: "60 seconds mein credit approval! Same day materials purchase kar liye. Bahut fast service hai. Suppliers ko bhi on-time payment hota hai, so better rates milte hain.",
-    author: "Priya Sharma",
-    role: "Managing Director",
-    company: "Sharma Cement & Steel Trading",
-    avatar: "PS",
-    location: "Mumbai",
+    quote:
+      '60 seconds mein credit approval! Same day materials purchase kar liye. Bahut fast service hai. Suppliers ko bhi on-time payment hota hai, so better rates milte hain.',
+    author: 'Priya Sharma',
+    role: 'Managing Director',
+    company: 'Sharma Cement & Steel Trading',
+    avatar: 'PS',
+    location: 'Mumbai',
   },
   {
-    quote: "Pehle cash flow manage karna bahut mushkil tha. Ab Harmey ke saath flexible payment terms milte hain. 120 din tak ka time milta hai, perfect for construction projects.",
-    author: "Mohammed Ansari",
-    role: "Proprietor",
-    company: "Ansari Building Materials",
-    avatar: "MA",
-    location: "Lucknow",
+    quote:
+      'Pehle cash flow manage karna bahut mushkil tha. Ab Harmey ke saath flexible payment terms milte hain. 120 din tak ka time milta hai, perfect for construction projects.',
+    author: 'Mohammed Ansari',
+    role: 'Proprietor',
+    company: 'Ansari Building Materials',
+    avatar: 'MA',
+    location: 'Lucknow',
   },
   {
-    quote: "Dashboard bahut simple hai. Sab kuch ek jagah dikh jata hai - credit limit, payments, inventory tracking. Staff ko bhi samajh aa jata hai easily.",
-    author: "Lakshmi Menon",
-    role: "Business Head",
-    company: "Menon Builders & Suppliers",
-    avatar: "LM",
-    location: "Bangalore",
+    quote:
+      'Dashboard bahut simple hai. Sab kuch ek jagah dikh jata hai - credit limit, payments, inventory tracking. Staff ko bhi samajh aa jata hai easily.',
+    author: 'Lakshmi Menon',
+    role: 'Business Head',
+    company: 'Menon Builders & Suppliers',
+    avatar: 'LM',
+    location: 'Bangalore',
   },
   {
-    quote: "Supplier relations improve ho gaye Harmey ke baad. Always on-time payment se trust ban gaya. Ab priority delivery milta hai aur better pricing bhi.",
-    author: "Vikram Singh",
-    role: "Director",
-    company: "Singh Hardware & Construction",
-    avatar: "VS",
-    location: "Jaipur",
+    quote:
+      'Supplier relations improve ho gaye Harmey ke baad. Always on-time payment se trust ban gaya. Ab priority delivery milta hai aur better pricing bhi.',
+    author: 'Vikram Singh',
+    role: 'Director',
+    company: 'Singh Hardware & Construction',
+    avatar: 'VS',
+    location: 'Jaipur',
   },
   {
-    quote: "Growing business ke liye working capital bahut zaroori hai. Harmey samajhta hai construction business ko. Flexible terms aur instant approval se growth easy ho gayi.",
-    author: "Deepika Patel",
-    role: "CFO",
-    company: "Patel Traders & Builders",
-    avatar: "DP",
-    location: "Ahmedabad",
+    quote:
+      'Growing business ke liye working capital bahut zaroori hai. Harmey samajhta hai construction business ko. Flexible terms aur instant approval se growth easy ho gayi.',
+    author: 'Deepika Patel',
+    role: 'CFO',
+    company: 'Patel Traders & Builders',
+    avatar: 'DP',
+    location: 'Ahmedabad',
   },
   {
-    quote: "Inventory management automatic ho gaya. Low stock alerts aur AI recommendations se kabhi shortage nahi hota. Projects smoothly chalte hain ab.",
-    author: "Arjun Reddy",
-    role: "Operations Manager",
-    company: "Reddy Building Materials",
-    avatar: "AR",
-    location: "Hyderabad",
+    quote:
+      'Inventory management automatic ho gaya. Low stock alerts aur AI recommendations se kabhi shortage nahi hota. Projects smoothly chalte hain ab.',
+    author: 'Arjun Reddy',
+    role: 'Operations Manager',
+    company: 'Reddy Building Materials',
+    avatar: 'AR',
+    location: 'Hyderabad',
   },
   {
-    quote: "Customer ko instant credit offer kar sakte hain, so sales badh gaye 2x. Harmey ka credit system customer aur shop dono ke liye beneficial hai.",
-    author: "Suresh Gupta",
-    role: "Shop Owner",
-    company: "Gupta Construction Stores",
-    avatar: "SG",
-    location: "Pune",
+    quote:
+      'Customer ko instant credit offer kar sakte hain, so sales badh gaye 2x. Harmey ka credit system customer aur shop dono ke liye beneficial hai.',
+    author: 'Suresh Gupta',
+    role: 'Shop Owner',
+    company: 'Gupta Construction Stores',
+    avatar: 'SG',
+    location: 'Pune',
   },
 ];
 
@@ -110,9 +118,8 @@ export default function Testimonials() {
   };
 
   const swipeConfidenceThreshold = 10000;
-  const swipePower = (offset: number, velocity: number) => {
-    return Math.abs(offset) * velocity;
-  };
+  const swipePower = (offset: number, velocity: number) =>
+    Math.abs(offset) * velocity;
 
   const paginate = (newDirection: number) => {
     setDirection(newDirection);
@@ -126,7 +133,10 @@ export default function Testimonials() {
   };
 
   return (
-    <section id="testimonials" className="py-24 bg-gradient-to-b from-slate-50 to-white relative overflow-hidden">
+    <section
+      id="testimonials"
+      className="py-24 bg-linear-to-b from-slate-50 to-white relative overflow-hidden"
+    >
       {/* Background decoration */}
       <div className="absolute inset-0 pointer-events-none">
         <motion.div
@@ -161,12 +171,11 @@ export default function Testimonials() {
           </motion.div>
           <h2 className="text-4xl sm:text-5xl font-bold text-slate-900 mb-4">
             Trusted by Construction Shops{' '}
-            <span className="text-primary">
-              Across India
-            </span>
+            <span className="text-primary">Across India</span>
           </h2>
           <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-            Real stories from real construction material suppliers who are growing their businesses with Harmey
+            Real stories from real construction material suppliers who are
+            growing their businesses with Harmey
           </p>
         </motion.div>
 
@@ -188,7 +197,7 @@ export default function Testimonials() {
                 drag="x"
                 dragConstraints={{ left: 0, right: 0 }}
                 dragElastic={1}
-                onDragEnd={(e, { offset, velocity }) => {
+                onDragEnd={(_, { offset, velocity }) => {
                   const swipe = swipePower(offset.x, velocity.x);
 
                   if (swipe < -swipeConfidenceThreshold) {
@@ -199,13 +208,13 @@ export default function Testimonials() {
                 }}
                 className="absolute w-full"
               >
-                <div className="bg-white rounded-md p-8 sm:p-12 border border-slate-200 shadow-2xl">
+                <div className="bg-white rounded-md p-8 sm:p-12 border border-slate-200 shadow-">
                   {/* Stars */}
                   <div className="flex items-center justify-center mb-6">
                     {[...Array(5)].map((_, i) => (
                       <svg
                         key={i}
-                        className="w-6 h-6 text-yellow-400"
+                        className="w-5 h-5 text-yellow-400"
                         fill="currentColor"
                         viewBox="0 0 20 20"
                       >
@@ -221,7 +230,7 @@ export default function Testimonials() {
 
                   {/* Author */}
                   <div className="flex items-center justify-center">
-                    <div className="w-16 h-16 rounded-full bg-primary flex items-center justify-center text-white font-bold text-xl mr-4">
+                    <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-md bg-primary flex items-center justify-center text-white font-bold text-lg sm:text-xl mr-4 shadow-md">
                       {testimonials[currentIndex].avatar}
                     </div>
                     <div className="text-left">
@@ -241,7 +250,7 @@ export default function Testimonials() {
                   </div>
 
                   {/* Decorative quote mark */}
-                  <div className="absolute top-8 right-8 text-8xl text-primary/10">
+                  <div className="absolute top-8 right-8 text-7xl sm:text-8xl text-primary/10">
                     "
                   </div>
                 </div>
@@ -250,22 +259,88 @@ export default function Testimonials() {
           </div>
 
           {/* Navigation Buttons */}
-          <button
-            onClick={() => paginate(-1)}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 sm:-translate-x-12 w-12 h-12 rounded-full bg-white border-2 border-slate-200 flex items-center justify-center hover:bg-primary hover:border-primary hover:text-white transition-colors shadow-lg"
-          >
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-            </svg>
-          </button>
-          <button
-            onClick={() => paginate(1)}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 sm:translate-x-12 w-12 h-12 rounded-full bg-white border-2 border-slate-200 flex items-center justify-center hover:bg-primary hover:border-primary hover:text-white transition-colors shadow-lg"
-          >
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-            </svg>
-          </button>
+          <div className="hidden sm:flex items-center justify-between mt-0">
+            <button
+              onClick={() => paginate(-1)}
+              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-6 w-10 h-10 rounded-md bg-white/90 border border-slate-200 flex items-center justify-center text-slate-700 hover:text-primary hover:border-primary/60 hover:bg-white shadow-sm hover:shadow-lg transition-all"
+              aria-label="Previous testimonial"
+            >
+              <svg
+                className="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M15 19l-7-7 7-7"
+                />
+              </svg>
+            </button>
+            <button
+              onClick={() => paginate(1)}
+              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-6 w-10 h-10 rounded-md bg-white/90 border border-slate-200 flex items-center justify-center text-slate-700 hover:text-primary hover:border-primary/60 hover:bg-white shadow-sm hover:shadow-lg transition-all"
+              aria-label="Next testimonial"
+            >
+              <svg
+                className="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M9 5l7 7-7 7"
+                />
+              </svg>
+            </button>
+          </div>
+
+          {/* Mobile nav: put buttons just below card, centered */}
+          <div className="flex sm:hidden justify-center gap-3 mt-4">
+            <button
+              onClick={() => paginate(-1)}
+              className="w-9 h-9 rounded-md bg-white/90 border border-slate-200 flex items-center justify-center text-slate-700 hover:text-primary hover:border-primary/60 hover:bg-white shadow-md hover:shadow-lg transition-all"
+              aria-label="Previous testimonial"
+            >
+              <svg
+                className="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M15 19l-7-7 7-7"
+                />
+              </svg>
+            </button>
+            <button
+              onClick={() => paginate(1)}
+              className="w-9 h-9 rounded-md bg-white/90 border border-slate-200 flex items-center justify-center text-slate-700 hover:text-primary hover:border-primary/60 hover:bg-white shadow-md hover:shadow-lg transition-all"
+              aria-label="Next testimonial"
+            >
+              <svg
+                className="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M9 5l7 7-7 7"
+                />
+              </svg>
+            </button>
+          </div>
 
           {/* Dots Navigation */}
           <div className="flex items-center justify-center gap-2 mt-8">
@@ -281,6 +356,7 @@ export default function Testimonials() {
                     ? 'w-8 bg-primary'
                     : 'w-2 bg-slate-300 hover:bg-slate-400'
                 }`}
+                aria-label={`Go to testimonial ${index + 1}`}
               />
             ))}
           </div>
@@ -301,11 +377,11 @@ export default function Testimonials() {
             {supplierBrands.map((brand, index) => (
               <motion.div
                 key={brand}
-                className="text-center text-lg font-bold text-slate-400"
+                className="text-center text-base sm:text-lg font-semibold text-slate-400"
                 initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 0.6, y: 0 }}
+                whileInView={{ opacity: 0.7, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
+                transition={{ delay: index * 0.08 }}
                 whileHover={{ opacity: 1, scale: 1.05 }}
               >
                 {brand}
