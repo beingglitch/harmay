@@ -15,6 +15,8 @@ import {
 } from "@/components/ui/navigation-menu"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
+import Image from "next/image"
+import { LOGO } from "@/assets"
 // import { LOGO } from "@/assets"
 // import Image from "next/image"
 
@@ -122,13 +124,13 @@ export function Header() {
               <div className="flex items-center justify-between h-16">
               {/* Logo */}
               <Link href="/" className="shrink-0">
-                   <div className={cn(
+                   {/* <div className={cn(
                     "text-2xl font-bold transition-colors",
                     textClass
                   )}>
                     Harmey
-                  </div> 
-                  {/* <Image src={LOGO} alt="logo" className="w-28 lg:w-32"/> */}
+                  </div>  */}
+                  <Image src={LOGO} alt="logo" className="w-28 lg:w-32"/>
               </Link>
 
               {/* Desktop Navigation */}
